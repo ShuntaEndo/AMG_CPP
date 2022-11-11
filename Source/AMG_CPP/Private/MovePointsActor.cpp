@@ -1,4 +1,5 @@
 #include "MovePointsActor.h"
+#include "Kismet/KismetMathLibrary.h"
 
 AMovePointsActor::AMovePointsActor()
 {
@@ -26,7 +27,7 @@ void AMovePointsActor::Tick(float DeltaSeconds)
 		CurrentMoveTime += DeltaSeconds;
 		if (CurrentMoveTime < MoveTime)
 		{
-			SetActorLocation(StartLocation + (EndLocation - StartLocation) * (CurrentMoveTime / MoveTime));
+			SetActorLocation(UKismetMathLibrary::VEase(StartLocation, EndLocation, CurrentMoveTime / MoveTime, EEasingFunc::EaseInOut));
 		}
 		else
 		{
