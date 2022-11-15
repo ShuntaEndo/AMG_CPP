@@ -28,9 +28,6 @@ public:
 public:
 	UFUNCTION(BlueprintCallable, CallInEditor, Category = "Sort")
 	void Reset();
-	
-	UFUNCTION(BlueprintCallable, CallInEditor, Category = "Sort")
-	void Shuffle();
 
 	UFUNCTION(BlueprintCallable, CallInEditor, Category = "Sort")
 	void Sort();

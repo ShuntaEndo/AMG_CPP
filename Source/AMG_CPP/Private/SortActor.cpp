@@ -11,11 +11,6 @@ void ASortActor::Reset()
 	
 }
 
-void ASortActor::Shuffle()
-{
-	
-}
-
 void ASortActor::Sort()
 {
 	
