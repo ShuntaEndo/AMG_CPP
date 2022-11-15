@@ -14,18 +14,21 @@ public:
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleInstanceOnly, Category = "Sort")
-	TArray<FString> StringArray =
-		{
-		"Apple",
-		"Orange",
-		"Strawberry",
-		"Cherry",
-		"Banana",
-		"Peach",
-		"Lemon"
-		};
+	TArray<int32> IntArray;
+
+	UPROPERTY(BlueprintReadWrite, EditInstanceOnly, Category = "Sort")
+	int32 Num = 30;
+
+	UPROPERTY(BlueprintReadWrite, EditInstanceOnly, Category = "Sort")
+	int32 RandomMin = 0;
+
+	UPROPERTY(BlueprintReadWrite, EditInstanceOnly, Category = "Sort")
+	int32 RandomMax = 1000;
 
 public:
+	UFUNCTION(BlueprintCallable, CallInEditor, Category = "Sort")
+	void Reset();
+	
 	UFUNCTION(BlueprintCallable, CallInEditor, Category = "Sort")
 	void Shuffle();
 
